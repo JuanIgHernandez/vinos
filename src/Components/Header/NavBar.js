@@ -1,6 +1,9 @@
 import React from "react"
 import Logo from '../../img/VinotecaLogo.png'
 import './NavBar.css'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+
 
 const NavBar = () => {
     return(
@@ -12,7 +15,7 @@ const NavBar = () => {
             <a href="">Sobre Nosotros</a>
             <a href="">Contacto</a>
         </nav>
-        
+        <ShoppingCartIcon sx={{ fontSize: 40 }} />
         </header>
     )
 }
