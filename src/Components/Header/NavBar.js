@@ -9,7 +9,7 @@ const NavBar = () => {
     return(
         <header>
         <img src={Logo} alt=""/>
-        <h1>Vinoteca Don Julian</h1>
+        <h1 class='text-3xl font-bold underline'>Vinoteca Don Julian</h1>
         <nav>
             <a href="">Catalogo</a>
             <a href="">Sobre Nosotros</a>
