@@ -1,0 +1,33 @@
+
+
+[
+    {
+      "Nombre": "Los Haroldos",
+      "Precio":650,
+      "Id":1,
+      "Categoria":"Tinto",
+      "Stock":5
+    },
+    {
+      "Nombre": "Trumpeter",
+      "Precio":1450,
+      "Id":2,
+      "Categoria":"Tinto",
+      "Stock":7  
+    },
+    {
+      "Nombre": "San Felipe",
+      "Precio":890,
+      "Id":3,
+      "Categoria":"Tinto",
+      "Stock":8  
+    },
+    {
+      "Nombre": "Elegido Cabernet Suavignon",
+      "Precio":430,
+      "Id":4,
+      "Categoria":"Tinto",
+      "Stock":9  
+    }
+]
+

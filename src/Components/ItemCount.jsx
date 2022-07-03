@@ -1,5 +1,21 @@
 import React, { useState } from 'react'
 
+const countStyle = {
+    backgroundColor: 'aqua',
+    width: 100,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft: '50%',
+}
+const buttonStyle = {
+    marginLeft: '50%',
+    backgroundColor: 'blue',
+    color: 'white',
+    height: 50,
+    width: 100,
+}
+
 export const ItemCount = ({ Stock, Initial = 1 }) => {
     const [Cuenta, setCuenta] = useState(Initial)
 
@@ -16,11 +32,13 @@ export const ItemCount = ({ Stock, Initial = 1 }) => {
     }
 
   return (
-    <div>
-    <button onClick={restar}>-</button>
-    <p>{Cuenta}</p>    
-    <button onClick={sumar}>+</button>
-    <button onClick={onAdd}>COMPRAR</button>    
+    <>
+    <div style={countStyle}>
+      <button onClick={restar}>-</button>
+      <p style={{padding: 13}}>{Cuenta}</p>    
+      <button onClick={sumar}>+</button>     
     </div>
+    <button style={buttonStyle} onClick={onAdd}>COMPRAR</button> 
+    </>
   )
 }

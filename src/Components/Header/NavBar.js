@@ -1,5 +1,5 @@
 import React from "react"
-import Logo from '../../img/VinotecaLogo.png'
+import Logo from '../../logo/VinotecaLogo.png'
 import './NavBar.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
