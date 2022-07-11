@@ -1,5 +1,7 @@
 import { fontSize } from "@mui/system";
 import React from "react";
+import { Link } from "react-router-dom";
+
 const titleStyle = {
     width:500,
     fontSize:20,
@@ -16,8 +18,9 @@ const divStyle = {
 }
 const imgStyle = {
     width:400,
-    height:200,
-    paddingLeft:100
+    height:230,
+    paddingLeft:150,
+    paddingRight:80
 
 }
 
@@ -37,7 +40,8 @@ const Item = ({ product }) => {
                    ${product.price}
                 </h2>
             </div>
-                <button>Ver Detalles</button>
+            <Link to={`/product/${product.id}`}><button>Ver Detalles</button></Link>
+               
         </div>
     )
 }

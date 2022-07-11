@@ -6,9 +6,8 @@ header{
 
 nav{
     display: flex;
-    justify-content: space-between;
-    padding-right: 10px;
-
+    justify-content: space-around;
+    
 }
 a{
     padding: 5px;
@@ -16,5 +15,11 @@ a{
 }
 
 img{
-    width: 10%;
+    width: 40%;
+    margin-right: 0%;
+}
+h1{
+    font-size: 40px;
+    margin-right: 60px;
+    padding: 50px;
 }

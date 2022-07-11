@@ -2,20 +2,27 @@ import React from "react"
 import Logo from '../../logo/ClothesLogo.jpg'
 import './NavBar.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link, NavLink } from "react-router-dom";
 
 
 
 const NavBar = () => {
+
+    const categories = [
+        { name: "Electronics", id: 0, route: "/category/electronics" },
+        { name: "Jewelery", id: 1, route: "/category/jewelery" },
+        { name: "Men's Clothing", id: 2, route: "/category/men's clothing" },
+        { name: "Women's clothing", id: 3, route: "/category/women's clothing" },
+    ];
+
     return(
         <header>
-        <img src={Logo} alt=""/>
+        <Link to="/"><img src={Logo} alt=""/></Link>
         <h1 class='text-3xl font-bold'>Clothes Store</h1>
         <nav>
-            <a href="">Catalogo</a>
-            <a href="">Sobre Nosotros</a>
-            <a href="">Contacto</a>
+        {categories.map((category) => <NavLink key={category.id} to={category.route}>{category.name}</NavLink>)}
         </nav>
-        <ShoppingCartIcon sx={{ fontSize: 40 }} />
+        <Link to="/cart"><ShoppingCartIcon sx={{ fontSize: 40 }} /></Link>
         </header>
     )
 }
