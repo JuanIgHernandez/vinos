@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 const countStyle = {
     backgroundColor: 'aqua',
     width: 100,
@@ -16,7 +17,7 @@ const buttonStyle = {
     width: 100,
 }
 
-export const ItemCount = ({ Stock, Initial = 1 }) => {
+export const ItemCount = ({ Stock, Initial = 1, onAdd }) => {
     const [Cuenta, setCuenta] = useState(Initial)
 
     const sumar = () => {
@@ -27,8 +28,8 @@ export const ItemCount = ({ Stock, Initial = 1 }) => {
         setCuenta(Math.max(Cuenta - 1, 1))
     }
 
-    const onAdd = () => {
-        alert('Gracias por su compra')
+    const ClickAddToCart = () => {
+      onAdd(Cuenta)
     }
 
   return (
@@ -38,7 +39,7 @@ export const ItemCount = ({ Stock, Initial = 1 }) => {
       <p style={{padding: 13}}>{Cuenta}</p>    
       <button onClick={sumar}>+</button>     
     </div>
-    <button style={buttonStyle} onClick={onAdd}>COMPRAR</button> 
+    <button style={buttonStyle} onClick={ClickAddToCart}>Añadir al Carrito</button> 
     </>
   )
 }

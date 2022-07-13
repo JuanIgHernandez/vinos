@@ -2,7 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/Header/NavBar.js'
-import { ItemCount } from './Components/ItemCount';
 import {
   BrowserRouter,
   Routes,
@@ -23,7 +22,7 @@ function App() {
       <Route path='/product/:productId' element={<ItemDetailsContainer/>}/>
       <Route path='/cart' element={<Cart/>}/>
     </Routes>
-    <ItemCount  Stock = {5}/>
+    
     
     </BrowserRouter>
     </>
