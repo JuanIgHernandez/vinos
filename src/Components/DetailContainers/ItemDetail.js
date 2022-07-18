@@ -1,7 +1,8 @@
 import React from "react";
 import { ItemCount } from "../ItemCount";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../CartContext/CartContext";
 
 const ButtonFStyle = {
     marginLeft: '50%',
@@ -14,7 +15,10 @@ const ButtonFStyle = {
 const ItemDetail = ({ product }) => {
 
     const [buyFinalized, setBuyFinalized] = useState(false)
-    const onAdd = () => {
+    const { addProduct } = useContext(CartContext);
+
+    const onAdd = (Cuenta) => {
+        addProduct({...product, qty: Cuenta});
         setBuyFinalized(true);
       }
 
@@ -26,9 +30,9 @@ const ItemDetail = ({ product }) => {
         <h2>{product.price}</h2>
         {buyFinalized
           ? <Link to="/cart">
-            <button style={ButtonFStyle}>Finalizar compra</button>
+            <button onClick={onAdd} style={ButtonFStyle}>Finalizar compra</button>
             </Link>
-          : <ItemCount initial={1} stock={5} onAdd={onAdd} />}
+          : <ItemCount Initial={1} Stock={5} onAdd={onAdd} />}
         </>
     )
 }

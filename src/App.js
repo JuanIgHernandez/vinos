@@ -10,11 +10,12 @@ import {
 import ItemListContainer from './Components/ListContainer/ItemListContainer';
 import ItemDetailsContainer from './Components/DetailContainers/ItemDetailContainer';
 import Cart from './Components/Cart/Cart';
+import CartCustomProvider from './Components/CartContext/CartContext';
 
 function App() {
   return (
-    <>
     <BrowserRouter>
+    <CartCustomProvider>
     <NavBar/>
     <Routes>
       <Route path='/' element={<ItemListContainer/>}/>
@@ -22,10 +23,8 @@ function App() {
       <Route path='/product/:productId' element={<ItemDetailsContainer/>}/>
       <Route path='/cart' element={<Cart/>}/>
     </Routes>
-    
-    
+    </CartCustomProvider>
     </BrowserRouter>
-    </>
   );
 }
 

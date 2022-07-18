@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
 
+
+
 const countStyle = {
     backgroundColor: 'aqua',
     width: 100,
@@ -21,9 +23,10 @@ export const ItemCount = ({ Stock, Initial = 1, onAdd }) => {
     const [Cuenta, setCuenta] = useState(Initial)
 
     const sumar = () => {
-        Cuenta < Stock && setCuenta(Cuenta + 1)
-        Cuenta >= Stock && alert('No hay stock =(')
+      if (Cuenta < Stock) {
+        setCuenta(Cuenta + 1);
     }
+}
     const restar = () => {
         setCuenta(Math.max(Cuenta - 1, 1))
     }
@@ -35,11 +38,11 @@ export const ItemCount = ({ Stock, Initial = 1, onAdd }) => {
   return (
     <>
     <div style={countStyle}>
-      <button onClick={restar}>-</button>
+      <button onClick={()=>restar()}>-</button>
       <p style={{padding: 13}}>{Cuenta}</p>    
-      <button onClick={sumar}>+</button>     
+      <button onClick={()=>sumar()}>+</button>     
     </div>
-    <button style={buttonStyle} onClick={ClickAddToCart}>Añadir al Carrito</button> 
+    <button style={buttonStyle} onClick={()=> ClickAddToCart()}>Añadir al Carrito</button> 
     </>
   )
 }
