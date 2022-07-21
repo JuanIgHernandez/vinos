@@ -1,7 +1,7 @@
 import React from "react"
 import Logo from '../../logo/ClothesLogo.jpg'
 import './NavBar.css'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from "../Cart/CartWidget";
 import { Link, NavLink } from "react-router-dom";
 
 
@@ -22,7 +22,7 @@ const NavBar = () => {
         <nav>
         {categories.map((category) => <NavLink key={category.id} to={category.route}>{category.name}</NavLink>)}
         </nav>
-        <Link to="/cart"><ShoppingCartIcon sx={{ fontSize: 40 }} /></Link>
+        <Link to="/cart"><CartWidget /></Link>
         </header>
     )
 }
