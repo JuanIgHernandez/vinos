@@ -20,29 +20,29 @@ const buttonStyle = {
 }
 
 export const ItemCount = ({ Stock, Initial = 1, onAdd }) => {
-    const [Cuenta, setCuenta] = useState(Initial)
+    const [cuenta, setCuenta] = useState(Initial)
 
     const sumar = () => {
-      if (Cuenta < Stock) {
-        setCuenta(Cuenta + 1);
+      if (cuenta < Stock) {
+        setCuenta(cuenta + 1);
     }
 }
     const restar = () => {
-        setCuenta(Math.max(Cuenta - 1, 1))
+        setCuenta(Math.max(cuenta - 1, 1))
     }
 
     const ClickAddToCart = () => {
-      onAdd(Cuenta)
+      onAdd(cuenta)
     }
 
   return (
     <>
     <div style={countStyle}>
       <button onClick={()=>restar()}>-</button>
-      <p style={{padding: 13}}>{Cuenta}</p>    
+      <p style={{padding: 13}}>{cuenta}</p>    
       <button onClick={()=>sumar()}>+</button>     
     </div>
-    <button style={buttonStyle} onClick={()=> ClickAddToCart()}>Añadir al Carrito</button> 
+    <button style={buttonStyle} onClick={ClickAddToCart}>Añadir al Carrito</button> 
     </>
   )
 }
