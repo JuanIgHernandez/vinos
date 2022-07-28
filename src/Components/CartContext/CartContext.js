@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react'
 
+
 export const CartContext = createContext();
 const { Provider } = CartContext;
 
@@ -8,7 +9,8 @@ const CartCustomProvider = ({children}) => {
 
     const [products, setProducts] = useState([]);
     const [qtyProducts, setQtyProducts] = useState(0);
-
+    const [total, setTotal] = useState(0)
+    
     const GetQtyProducts = () => {
         let qty = 0;
         products.forEach(product => qty += product.qty);
@@ -46,9 +48,12 @@ const CartCustomProvider = ({children}) => {
         setProducts([]);
         setQtyProducts(0)
     }
+    const CalcularTotal = () =>{
+        setTotal(products.reduce((acc,products)=>acc+=products.price,0))
+    }
 
   return (
-    <Provider value={{products, addProduct, deleteProduct,clear, qtyProducts}}>
+    <Provider value={{products, addProduct, deleteProduct,clear, qtyProducts, CalcularTotal, total}}>
         {children}
     </Provider>
   )
