@@ -9,14 +9,16 @@ const countStyle = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginLeft: '50%',
+    justifyContent: "center",
+    marginLeft: 200,
 }
 const buttonStyle = {
-    marginLeft: '50%',
     backgroundColor: 'blue',
     color: 'white',
     height: 50,
     width: 100,
+    justifyContent: "center",
+    marginLeft: 200,
 }
 
 export const ItemCount = ({ Stock, Initial = 1, onAdd }) => {

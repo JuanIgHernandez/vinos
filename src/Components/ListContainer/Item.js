@@ -4,17 +4,26 @@ import { Link } from "react-router-dom";
 
 const titleStyle = {
     width:500,
-    fontSize:20,
+    fontSize:30,
+    textTransform: 'uppercase',
+    fontFamily: 'Franklin Gothic Medium, Arial Narrow, Arial, sans-serif',
     display: 'flex',
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: 'Brown'
+    backgroundColor: 'aquamarine',
 }
 const divStyle = {
-    backgroundColor:'aqua',
     width:500,
     margin:50,
     
+}
+const priceStyle = {
+    backgroundColor: 'aqua',
+    display: 'flex',
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize:50,
+    textTransform: 'uppercase',
 }
 const imgStyle = {
     width:400,
@@ -35,12 +44,14 @@ const Item = ({ product }) => {
             <div>
                 <img style={imgStyle} src={product.image} alt={product.title} />
             </div>
-            <div>
+            <div style={priceStyle}>
                 <h2>
                    ${product.price}
                 </h2>
             </div>
-            <Link to={`/product/${product.id}`}><button>Ver Detalles</button></Link>
+            <div style={priceStyle} > 
+                <Link to={`/product/${product.id}`}><button>Ver Detalles</button></Link>
+            </div>
                
         </div>
     )

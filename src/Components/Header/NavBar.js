@@ -9,7 +9,7 @@ import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {
 
     const categories = [
-        { name: "Electronics", id: 0, route: "/category/electronics" },
+        { name: "Shoes", id: 0, route: "/category/shoes" },
         { name: "Jewelery", id: 1, route: "/category/jewelery" },
         { name: "Men's Clothing", id: 2, route: "/category/men's clothing" },
         { name: "Women's clothing", id: 3, route: "/category/women's clothing" },
@@ -18,7 +18,7 @@ const NavBar = () => {
     return(
         <header>
         <Link to="/"><img src={Logo} alt=""/></Link>
-        <h1 class='text-3xl font-bold'>Clothes Store</h1>
+        <h1>CLOTHES STORE</h1>
         <nav>
         {categories.map((category) => <NavLink key={category.id} to={category.route}>{category.name}</NavLink>)}
         </nav>
@@ -26,5 +26,6 @@ const NavBar = () => {
         </header>
     )
 }
+
 
 export default NavBar

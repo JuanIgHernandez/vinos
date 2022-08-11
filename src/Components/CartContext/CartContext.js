@@ -49,7 +49,7 @@ const CartCustomProvider = ({children}) => {
         setQtyProducts(0)
     }
     const CalcularTotal = () =>{
-        setTotal(products.reduce((acc,products)=>acc+=products.price,0))
+        setTotal(products.reduce((acc,products)=>acc+=products.price))
     }
 
   return (

@@ -2,24 +2,31 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: lightblue;
+    
 }
 
 nav{
     display: flex;
     justify-content: space-around;
-    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+        
 }
 a{
-    padding: 5px;
+    text-transform: uppercase;
+    padding: 10px;
     text-decoration: none;
+    font-size: 20px;
 }
 
 img{
-    width: 40%;
+    width: 100px;
     margin-right: 0%;
 }
 h1{
-    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
     margin-right: 60px;
     padding: 50px;
 }
