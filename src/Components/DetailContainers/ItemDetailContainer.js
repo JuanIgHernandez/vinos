@@ -3,11 +3,12 @@ import ItemDetail from './ItemDetail.js';
 import { useParams } from 'react-router-dom';
 import { database } from "../../firebase/firebase"
 import { doc, getDoc, collection } from "firebase/firestore"
-
+import LoopIcon from '@mui/icons-material/Loop';
 
 export const ItemDetailsContainer = () => {
 
     const [product, setProduct] = useState([]);
+    const [loaded, setLoaded] = useState(true);
 
     const { productId } = useParams();
 
@@ -21,11 +22,12 @@ export const ItemDetailsContainer = () => {
             })
         })
         .catch(err => console.log(err))
+        .finally(() => setLoaded(false))
     }, [productId]);
 
     return (
         <>
-         <ItemDetail product={product} />
+         {loaded ? <LoopIcon color="black" fontSize="large" /> : <ItemDetail product={product} />}
         </>
     )
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/Header/NavBar.js'
 import {
@@ -11,6 +10,7 @@ import ItemListContainer from './Components/ListContainer/ItemListContainer';
 import ItemDetailsContainer from './Components/DetailContainers/ItemDetailContainer';
 import Cart from './Components/Cart/Cart';
 import CartCustomProvider from './Components/CartContext/CartContext';
+import Formulario from './Components/Cart/Formulario';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
       <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
       <Route path='/product/:productId' element={<ItemDetailsContainer/>}/>
       <Route path='/cart' element={<Cart/>}/>
+      <Route path='/formulario' element={<Formulario/>}/>
     </Routes>
     </CartCustomProvider>
     </BrowserRouter>

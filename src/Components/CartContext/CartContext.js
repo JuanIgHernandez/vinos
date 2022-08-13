@@ -19,6 +19,8 @@ const CartCustomProvider = ({children}) => {
 
     useEffect(() => {
       GetQtyProducts();
+      calcularTotal();
+
     }, [products])
     
   
@@ -48,12 +50,14 @@ const CartCustomProvider = ({children}) => {
         setProducts([]);
         setQtyProducts(0)
     }
-    const CalcularTotal = () =>{
-        setTotal(products.reduce((acc,products)=>acc+=products.price))
+    const calcularTotal = () =>{
+        let totalaux = 0
+        products.forEach(product => totalaux+=product.price*product.qty)
+        setTotal(totalaux)
     }
 
   return (
-    <Provider value={{products, addProduct, deleteProduct,clear, qtyProducts, CalcularTotal, total}}>
+    <Provider value={{products, addProduct, deleteProduct,clear, qtyProducts, total}}>
         {children}
     </Provider>
   )

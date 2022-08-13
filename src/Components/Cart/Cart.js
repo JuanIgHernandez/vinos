@@ -2,10 +2,6 @@ import React from "react";
 import { useContext } from "react";
 import { CartContext} from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
-import { database } from "../../firebase/firebase"
-import { collection, addDoc, serverTimestamp} from 'firebase/firestore'
-import { useState } from "react";
-
 
 
 
@@ -36,29 +32,15 @@ const Cart = () => {
         color:'white'
     }
 
-    const { products, qtyProducts, deleteProduct, total, CalcularTotal } = useContext(CartContext)
-    const [buyFinalizedd, setBuyFinalizedd] = useState(false)
-
-    const finalizarCompra = () => {
-        const ventadataCollection = collection(database, 'dataventa');
-        addDoc(ventadataCollection, {
-          items: products,
-          date: serverTimestamp(),
-          total: total
-        })
-        setBuyFinalizedd(true)}
-    
-   
-
-
+    const { products,  deleteProduct, total } = useContext(CartContext)
 
     return(
         <>
         {products.length===0
             ? <h1>Carrito vacio, Catalogo <Link to="/">Aqui</Link></h1>
             : <>{products.map(product => <div style={CartStyle}><h2 style={CartStyle} key={product.id}><img src={product.image} alt={product.title} /></h2><h2 style={itemStyle}>{product.title}</h2> <h2 style={itemStyle}>${product.price}</h2><h2 style={itemStyle}>{product.qty}</h2><button onClick={()=> deleteProduct(product.id)}>X</button></div> )}
-                <p style={TotalStyle}>TOTAL: ${CalcularTotal()}</p>
-                <button style={FinalizarStyle} onClick={finalizarCompra()}>FINALIZAR COMPRA</button></>
+                <p style={TotalStyle}>TOTAL:${total}</p>
+                <Link to="/formulario"><button style={FinalizarStyle}>FINALIZAR COMPRA</button></Link></>
         }        
         </>
         )
